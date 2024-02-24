@@ -38,3 +38,13 @@ function getTable(){
     let number = document.getElementById("tableNumber").value ;
     return Table(number);
 }
+function getSum(){
+    let number=parseFloat(prompt("Enter the first number:",""));
+    let sum=number;
+    let flag=confirm("Do you want to add more numbers?");
+    while(flag){
+        sum += parseFloat(prompt("enter the next number"));
+        flag=confirm("Do you want to add more numbers?");
+    }
+    alert("The Sum is :"+sum);
+}

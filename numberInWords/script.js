@@ -20,8 +20,10 @@ function numberToWords(input){
     const oneslist = ['','one','two','three','four','five','six','seven','eight','nine'];
     const tenslist = ['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninty'];
     const teens = ['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','ninteen'];
-    
-    if (input<10) {
+    if (input==0) {
+        return 'zero';
+    }
+    else if (input<10) {
         return oneslist[input];
     }
     else if (input>=10&& input<20) {

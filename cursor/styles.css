@@ -1,0 +1,25 @@
+.heading{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background: url(./photo_2023-12-07_11-31-36.jpg);
+    background-repeat: no-repeat;
+
+}
+a:link{
+    color:aqua;
+}
+a:hover{
+    color:orange;
+
+}
+
+a:active{
+    color: purple;
+}
+a:visited{
+    color: teal;
+}
+a{
+    cursor: help;
+}

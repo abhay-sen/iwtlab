@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Example</title>
+    <script>
+        // Function to set a cookie
+        function setCookie(name, value, daysToExpire) {
+            var date = new Date();
+            date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        // Function to get the value of a cookie
+        function getCookie(name) {
+            var cookieName = name + "=";
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var cookieArray = decodedCookie.split(';');
+            for (var i = 0; i < cookieArray.length; i++) {
+                var cookie = cookieArray[i].trim();
+                if (cookie.indexOf(cookieName) == 0) {
+                    return cookie.substring(cookieName.length, cookie.length);
+                }
+            }
+            return "";
+        }
+
+        // Example usage
+        window.onload = function () {
+            // Set a cookie with name "exampleCookie" and value "Hello, Cookies!"
+            setCookie("exampleCookie", "Hello, Cookies!", 7);
+
+            // Retrieve the value of the "exampleCookie" and display it
+            var cookieValue = getCookie("exampleCookie");
+            alert("Cookie Value: " + cookieValue);
+        };
+    </script>
+</head>
+<body>
+    <h1>Cookies Example</h1>
+</body>
+</html>

@@ -1,11 +1,11 @@
 function convert(){
-    var input = document.getElementById("number").value
+    var input = document.getElementById("number").value;
     if (!isNaN(input)) { 
         if (input>=0&&input<=999) {
             alert(numberToWords(input));
         }
         else{
-            alert("Please enter a number between the range 0-999")
+            alert("Please enter a number between the range 0-999");
         }
     }
     else{

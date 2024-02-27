@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>RollNo Collection</title>
+    <script type="text/javascript">
+        function validateRollNo() {
+            // Get the input value from the form
+            var rollNo = document.getElementById("rollNo").value;
+
+            // Define the regular expression for valid RollNo format
+            var rollNoRegex = /^[1-4][A-Z]{2}\d{2}[A-Z]{2}\d{3}$/;
+
+            // Test the input against the regular expression
+            if (rollNoRegex.test(rollNo)) {
+                alert("Valid RollNo: " + rollNo);
+            } else {
+                alert("Invalid RollNo format. Please enter a valid RollNo.");
+            }
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <form onsubmit="return validateRollNo();">
+        <label for="rollNo">RollNo:</label>
+        <input type="text" id="rollNo" name="rollNo" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

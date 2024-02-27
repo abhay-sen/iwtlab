@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Change</title>
+    <style>
+        
+    </style>
+    <script>
+        function changeBackgroundColor() {
+            // Generate a random color using hexadecimal format
+            var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+
+            // Change the background color of the body
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        // Set interval to call the function every 2 seconds (2000 milliseconds)
+        setInterval(changeBackgroundColor, 500);
+    </script>
+</head>
+
+<body>
+    <h1>Background Color Change Example</h1>
+</body>
+
+</html>

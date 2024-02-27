@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <script ></script>
+    <h1 id="heading">Blinking Effect</h1>
+    <script >
+        
+        function blink() {
+            var heading = document.getElementById("heading");
+            heading.style.visibility= ( heading.style.visibility == "hidden") ? "visible" : "hidden"; 
+        }
+        setInterval(blink, 500);
+    </script>
 </body>
 </html>

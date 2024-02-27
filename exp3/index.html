@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        input {
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+
+            var nameRegex = /^[a-zA-Z]{6,}$/;
+            var passwordRegex = /^.{6,}$/;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!nameRegex.test(name)) {
+                alert("Invalid Name. It should contain alphabets and be at least 6 characters long.");
+                return false;
+            }
+
+            if (!passwordRegex.test(password)) {
+                alert("Invalid Password. It should be at least 6 characters long.");
+                return false;
+            }
+
+            if (!emailRegex.test(email)) {
+                alert("Invalid Email address.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
+*//^[a-zA-Z]{6,}$/
+explain this
+ChatGPT
+Certainly! Let's break down the regular expression /^[a-zA-Z]{6,}$/:
+
+/: Delimiters used to enclose the regular expression.
+^: Anchors the regex at the beginning of the string, ensuring that the match starts from the start of the string.
+[a-zA-Z]: Character class that matches any uppercase or lowercase alphabet. The a-z and A-Z inside square brackets
+specify the range of characters to match.
+{6,}: Quantifier that specifies that the preceding character class [a-zA-Z] should occur at least 6 times or more. This
+enforces a minimum length of 6 characters.
+$: Anchors the regex at the end of the string, ensuring that the match extends to the end of the string.
+Explanation: This regular expression is used for validating a string (such as a name) and checks the following criteria:
+
+The string must start with an alphabet (either lowercase or uppercase) due to the ^ anchor.
+The string must contain only alphabets, as specified by the character class [a-zA-Z].
+The string must be at least 6 characters long due to the {6,} quantifier.
+The string must end after the specified minimum length, as indicated by the $ anchor.
+In summary, this regular expression ensures that the input string contains alphabets and has a minimum length of 6
+characters. It doesn't allow non-alphabetic characters or strings shorter than 6 characters.
+
+User
+/^.{6,}$/
+explain this
+ChatGPT
+Certainly! Let's break down the regular expression /^.{6,}$/:
+
+/: Delimiters used to enclose the regular expression.
+^: Anchors the regex at the beginning of the string, ensuring that the match starts from the start of the string.
+.: Matches any character (except for a newline character).
+{6,}: Quantifier that specifies that the preceding . should occur at least 6 times or more. This enforces a minimum
+length of 6 characters.
+$: Anchors the regex at the end of the string, ensuring that the match extends to the end of the string.
+Explanation: This regular expression is used for validating a string, and it checks the following criteria:
+
+The string must start from the beginning, as indicated by the ^ anchor.
+The string can contain any character (including letters, numbers, symbols, and spaces) due to the . character.
+The string must be at least 6 characters long, as specified by the {6,} quantifier.
+The string must end after the specified minimum length, as indicated by the $ anchor.
+In summary, this regular expression ensures that the input string is at least 6 characters long, and it can include any
+combination of characters. It doesn't impose any restrictions on the type of characters allowed, except that the string
+must be at least 6 characters in length.
+
+User
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+explain this
+ChatGPT
+Certainly! Let's break down the regular expression /^[^\s@]+@[^\s@]+\.[^\s@]+$/:
+
+/: Delimiters used to enclose the regular expression.
+^: Anchors the regex at the beginning of the string, ensuring that the match starts from the start of the string.
+[^\s@]+: Character class that matches one or more characters that are not whitespace (\s) or the '@' symbol.
+@: Matches the '@' symbol.
+[^\s@]+: Character class that matches one or more characters that are not whitespace (\s) or the '@' symbol.
+\.: Escaped dot character, which matches the dot '.' in the domain part of the email address.
+[^\s@]+: Character class that matches one or more characters that are not whitespace (\s) or the '@' symbol.
+$: Anchors the regex at the end of the string, ensuring that the match extends to the end of the string.
+Explanation: This regular expression is used for validating an email address, and it checks the following criteria:
+
+The string must start from the beginning, as indicated by the ^ anchor.
+The local part of the email address (before the '@' symbol) must consist of one or more characters that are not
+whitespace or the '@' symbol ([^\s@]+).
+The '@' symbol must be present in the email address.
+The domain part of the email address (after the '@' symbol) must consist of one or more characters that are not
+whitespace or the '@' symbol ([^\s@]+).
+The dot '.' character must separate the domain and subdomain parts of the email address.
+The domain part after the dot must consist of one or more characters that are not whitespace or the '@' symbol
+([^\s@]+).
+The string must end after the specified pattern, as indicated by the $ anchor.
+In summary, this regular expression ensures that the input string matches the basic structure of a valid email address,
+including the presence of '@' and the dot in the domain part. It doesn't perform in-depth validation of the email
+address format or existence.

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Capitals</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <label for="countrySelect">Select a Country:</label>
+    <select id="countrySelect" onchange="displayCapital()">
+        <option value="" selected disabled>Select Country</option>
+        <option value="india">India</option>
+        <option value="usa">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="france">France</option>
+        <option value="japan">Japan</option>
+    </select>
+
+    <div id="capitalOutput"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

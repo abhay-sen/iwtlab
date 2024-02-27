@@ -1,0 +1,21 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+select {
+    font-size: 16px;
+    padding: 5px;
+}
+
+#capitalOutput {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+}

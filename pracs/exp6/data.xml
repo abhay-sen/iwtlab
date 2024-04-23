@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE students [
+    <!ELEMENT students (student*)>
+    <!ELEMENT student (rollNo, name, collegeName, branch, yearOfJoining, email)>
+    <!ELEMENT rollNo (#PCDATA)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT collegeName (#PCDATA)>
+    <!ELEMENT branch (#PCDATA)>
+    <!ELEMENT yearOfJoining (#PCDATA)>
+    <!ELEMENT email (#PCDATA)>
+]>
+<students>
+    <student>
+        <rollNo>001</rollNo>
+        <name>John Doe</name>
+        <collegeName>ABC Engineering College</collegeName>
+        <branch>Computer Science</branch>
+        <yearOfJoining>2022</yearOfJoining>
+        <email>john.doe@example.com</email>
+    </student>
+    <student>
+        <rollNo>002</rollNo>
+        <name>Jane Smith</name>
+        <collegeName>XYZ Engineering College</collegeName>
+        <branch>Electrical Engineering</branch>
+        <yearOfJoining>2021</yearOfJoining>
+        <email>jane.smith@example.com</email>
+    </student>
+    <student>
+        <rollNo>003</rollNo>
+        <name>Michael Johnson</name>
+        <collegeName>PQR Engineering College</collegeName>
+        <branch>Mechanical Engineering</branch>
+        <yearOfJoining>2023</yearOfJoining>
+        <email>michael.johnson@example.com</email>
+    </student>
+    <student>
+        <rollNo>004</rollNo>
+        <name>Sarah Williams</name>
+        <collegeName>LMN Engineering College</collegeName>
+        <branch>Civil Engineering</branch>
+        <yearOfJoining>2022</yearOfJoining>
+        <email>sarah.williams@example.com</email>
+    </student>
+    <student>
+        <rollNo>005</rollNo>
+        <name>David Brown</name>
+        <collegeName>JKL Engineering College</collegeName>
+        <branch>Chemical Engineering</branch>
+        <yearOfJoining>2021</yearOfJoining>
+        <email>david.brown@example.com</email>
+    </student>
+</students>
